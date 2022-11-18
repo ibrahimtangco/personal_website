@@ -92,6 +92,7 @@
 
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .about, 
@@ -104,7 +105,7 @@ html{
 body {
     background-color: var(--background-primary);
     font-size: 16px;
-    overflow-x: hidden
+    
 }
 h1,h2,h3 {
     color: var(--background-secondary);
@@ -230,18 +231,13 @@ nav{
     padding: 0;
     height: 100vh;
 }
-.about .images{
-    position: relative;
-    left: 0;
-    gap: 110px;
-    justify-content: space-around;
-    z-index: -1;
-}
+
 .about .images img{
-    transform: rotate(90deg);
-}
-.about .images img:last-child{
-    margin-top: 1rem;
+    width: 80%;
+    margin: 1rem auto 3rem;
+    object-fit: cover;
+    height: 300px;
+    border-radius: 5%;
 }
 .about .information{
     width: 80%;
@@ -296,12 +292,14 @@ nav{
 }
 input, textarea{
     border: none;
-    border-bottom: 1px solid var(--acent);
+    border-bottom: 1px solid var(--background-secondary);
     padding: .4rem;
     width: 80%;
     margin: 1rem 0;
     outline: none;
     font-weight: 500;
+    background-color: transparent;
+    color: var(--background-secondary);
 }
 .form{
     text-align: center;
@@ -326,6 +324,8 @@ footer{
 .link-links li{
     list-style: none;
     margin: 5px 0;
+    font-size: .9rem;
+    font-weight: 500;
    
 }
 .link-links ul {
@@ -342,5 +342,16 @@ footer{
     transform: rotate(270deg);
 }
 .primary{
-    color: var(--primary)
+    color: var(--background-primary)
+}
+
+@media screen and (min-width: 600px){
+    .about .images img{
+        width: 80%;
+        margin: 1rem auto 3rem;
+        object-fit: cover;
+        height: auto;
+        border-radius: 5%;
+    }
+ 
 }
